@@ -1,0 +1,316 @@
+<!-- php script for database
+?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?
+-->
+
+
+
+
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>TheHolyRagers</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <a href="index.php" class="logo">TheHolyRagers</a>
+            <ul class="nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#streamers">Streamers</a></li>
+                <li><a href="#youtuber">Youtube</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="action">
+                <div class="searchBx">
+                    <a href="#"><i class='bx bx-search'></i></a>
+                    <input type="text" placeholder="Search Games">
+                </div>
+            </div>
+            <div class="toggleMenu" onclick="toggleMenu();"></div>
+        </header>
+
+        <!-- Home Banner -->
+        <div class="banner animeX" id="home">
+            <div class="bg">
+                <div class="content">
+                    <h2>A home for those<br>
+                    who just love games</h2>
+                    <p>I bet he's fucking raging.<br>
+                    Join our Discord now!!</p>
+                    <a href="https://discords.com/servers/844176680519204884" class="btn">Join Now</a>
+                </div>
+                <img src="images/Santos.png">
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="about animeX" id="about">
+            <div class="contentBx">
+                <h2>About Us</h2>
+                <p>The Holy Ragers is a small team of players trying and testing out games. We create fun clips or mind blowing moments to upload to the viewers.
+                   Follow us to see some of our most raging moments within games, moments where you laugh, cry and wanna tear your eyeballs out. Welcome to The Holy Ragers!
+                </p>
+                <a href="aboutus.php">Read more</a>
+            </div>
+            <img src="images/videogame1.png">
+        </div>
+
+        <!-- Streamers -->
+        <div class="streamers animeX" id="streamers">
+            <h2>A few of our streamers</h2>
+            <ul>
+            </ul>
+            <div class="cardBx">
+                <div class="card" data-item="pc">
+                    <img src="images/Narky.png">
+                    <div class="content">
+                        <h4>NorsemanNark</h4>
+                        <div class="info">
+                            <a href="https://www.twitch.tv/norsemannark">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="images/Blacob.png">
+                    <div class="content">
+                        <h4>TheRagingBlacob</h4>
+                        <div class="info">
+                            <a href="https://www.twitch.tv/theragingblacob">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="images/Sebrof.png">
+                    <div class="content">
+                        <h4>TheRagingSebrof</h4>
+                        <div class="info">
+                            <a href="https://www.twitch.tv/theragingsebrof">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="images/Furry.png">
+                    <div class="content">
+                        <h4>TRagingFurry</h4>
+                        <div class="info">
+                            <a href="https://www.twitch.tv/tragingfurry">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <a href="embed.php">View More</a>
+            </div>
+        </div>
+
+
+
+        <!-- Youtube Channels -->
+        <div class="youtuber animeX" id="youtuber">
+            <h2>Youtube Channels</h2>
+            <div class="boxBx">
+                <div class="box">
+                    <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/rJgzI8sYVK4?">
+                    </iframe>
+                    <div class="content">
+                        <h4><span>Youtube</span> TheHolyRagers</h4>
+                        <p>The Holy Ragers is a small team of players trying and testing out games. We create fun clips or 
+                            mind blowing moments to upload to the viewers. Follow us to see some of our most raging moments within games,
+                            moments where you laugh, cry and wanna tear your eyeballs out
+                       </p>
+                       <div class="btn">
+                           <a href="youtubers.html" class="watch">Watch</a>
+                           <a href="#" class="join">Join Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/kMtgi6ncy9g?">
+                    </iframe>
+                    <div class="content">
+                        <h4><span>Youtube</span> TheRagingFurry</h4>
+                        <p>I'm The Raging Furry and welcome to my Youtube account.
+                            Part of The Holy Ragers gaming group, I do a mix of games from FPS to MMO and even some racing and strategy games.
+                            Everything is different, high times and low times. Come over to Twitch to see me regularly but enjoy my content here on Youtube as well.
+                       </p>
+                       <div class="btn">
+                           <a href="#" class="watch">Watch</a>
+                           <a href="#" class="join">Join Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/ERheR3ot5M0?">
+                    </iframe>
+                    <div class="content">
+                        <h4><span>Youtube</span> Narkcast</h4>
+                        <p>NarkCast -  All the fun of the gaming world to the tech that runs it! We are complete noobs who have no idea what we are doing 
+                            *Keep an eye on our channel for our developing content*
+                            Follow us on our social media and check out our team members channels!!
+                            
+                            Art work - Nikki Rynne
+                       </p>
+                       <div class="btn">
+                           <a href="#" class="watch">Watch</a>
+                           <a href="#" class="join">Join Now</a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <a href="youtubers.php">View More</a>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <div class="contact animeX" id="contact">
+                <img src="images/5319617.jpg">
+                <div class="form">
+                    <h1>Contact Us</h1>
+                    <div class="inputBx">
+                        <p>Enter Name</p>
+                        <input type="text" id="name" placeholder="Full Name">
+                    </div>
+                    <div class="inputBx">
+                        <p>Enter Email</p>
+                        <input type="email" id="email" placeholder="Email Address">
+                    </div>
+                    <div class="inputBx">
+                        <p>Message</p>
+                        <textarea placeholder="Type here..."></textarea>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" name="Submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            <div class="info">
+                <a href="index.php" class="logo">TheHolyRagers</a>
+                <p><i class='bx bx-copyright' ></i> 2023 TheHolyRagersLtd All Rights Reserved</p>
+                <ul>
+                    <li><a href="https://www.facebook.com/gaming/TheHolyRagers"><i class='bx bxl-facebook' ></i></a></li>
+                    <li><a href="https://www.instagram.com/theholyragers/"><i class='bx bxl-instagram' ></i></a></li>
+                    <li><a href="https://twitter.com/HolyRagers"><i class='bx bxl-twitter' ></i></a></li>
+                    <li><a href="https://www.youtube.com/@theholyragers739"><i class='bx bxl-youtube' ></i></a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script>
+            /* Sticky NavBar */
+            window.addEventListener('scroll',function(){
+                var header = document.querySelector('header');
+                header.classList.toggle('sticky',window.scrollY > 0);
+            });
+
+            /* Responsive NavBar */
+
+            function toggleMenu(){
+                const toggleMenu = document.querySelector('.toggleMenu');
+                const nav = document.querySelector('.nav');
+                toggleMenu.classList.toggle('active')
+                nav.classList.toggle('active')
+            }
+
+            /* Scrolling Animation Effects */
+            window.addEventListener('scroll',function(){
+                var anime = document.querySelectorAll('.animeX');
+
+                for(var s = 0; s < anime.length; s++){
+                    var windowheight = window.innerHeight;
+                    var animetop = anime[s].getBoundingClientRect().top;
+                    var animepoint = 150;
+
+                    if(animetop < windowheight - animepoint){
+                        anime[s].classList.add('active');
+                    }
+                    else{
+                        anime[s].classList.remove('active');
+                    }
+                }
+            })
+
+
+
+
+
+            /* Filterable Cards */
+
+            let list = document.querySelectorAll('.list');
+            let card = document.querySelectorAll('.card'); 
+
+            for(let i = 0; i<list.length; i++){
+                list[i].addEventListener('click',function(){
+                    for(let j=0; j<list.length; j++){
+                        list[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+
+                    let dataFilter = this.getAttribute('data-filter');
+
+                    for( let k=0; k<card.length; k++)
+                    {
+                        card[k].classList.remove('active');
+                        card[k].classList.add('hide');
+
+                        if(card[k].getAttribute('data-item') == dataFilter || dataFilter == 'all'){
+                            card[k].classList.remove('hide');
+                            card[k].classList.add('active');
+                        }
+                    }
+                })
+            }
+        </script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "theholyragers@gmail.com",
+                    Password : "Narkasin99",
+                    To : 'theholyragers@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Contact Enquiry",
+                    Body : "And this is the body"
+                }).then(
+                message => alert(message)
+                );
+            }
+
+        </script>
+    </body>
+</html>

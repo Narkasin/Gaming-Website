@@ -1,0 +1,221 @@
+<!-- php script for database
+?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?
+-->
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>TheHolyRagers</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <a href="index.php" class="logo">TheHolyRagers</a>
+            <ul class="nav">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutus.php">About</a></li>
+                <li><a href="embed.php">Streamers</a></li>
+                <li><a href="youtubers.php">Youtube</a></li>
+            </ul>
+            <div class="action">
+                <div class="searchBx">
+                    <a href="#"><i class='bx bx-search'></i></a>
+                    <input type="text" placeholder="Search Games">
+                </div>
+            </div>
+            <div class="toggleMenu" onclick="toggleMenu();"></div>
+        </header>
+
+        <!-- Home Banner -->
+        <div class="banner animeX" id="home">
+            <div class="bg">
+                <div class="content">
+                    <h2>A home for those<br>
+                    who just love games</h2>
+                    <p>I bet he's fucking raging.<br>
+                    Join our Discord now!!</p>
+                    <a href="https://discords.com/servers/844176680519204884" class="btn">Join Now</a>
+                </div>
+                <img src="images/ytube.png">
+            </div>
+        </div>
+
+                <!-- Youtube Channels -->
+                <div class="youtuber animeX" id="youtuber">
+                    <h2>Some of our content</h2>
+                    <div class="boxBx">
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/rJgzI8sYVK4?">
+                            </iframe>
+                        </div>
+        
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/kMtgi6ncy9g?">
+                            </iframe>
+                        </div>
+        
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/0FI_h3LfGI0?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/yqXvatJTUaU?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/1pAl-qsTWIg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/sLHW_atSw34?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+
+                        <div class="box">
+                            <iframe width="420" height="315"
+                            src="https://www.youtube.com/embed/5KsOoUsFDBg?">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Footer -->
+                <footer>
+                    <div class="info">
+                        <a href="index.php" class="logo">TheHolyRagers</a>
+                        <p><i class='bx bx-copyright' ></i> 2023 TheHolyRagersLtd All Rights Reserved</p>
+                        <ul>
+                            <li><a href="https://www.facebook.com/gaming/TheHolyRagers"><i class='bx bxl-facebook' ></i></a></li>
+                            <li><a href="https://www.instagram.com/theholyragers/"><i class='bx bxl-instagram' ></i></a></li>
+                            <li><a href="https://twitter.com/HolyRagers"><i class='bx bxl-twitter' ></i></a></li>
+                            <li><a href="https://www.youtube.com/@theholyragers739"><i class='bx bxl-youtube' ></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+        
+                <script>
+                    /* Sticky NavBar */
+                    window.addEventListener('scroll',function(){
+                        var header = document.querySelector('header');
+                        header.classList.toggle('sticky',window.scrollY > 0);
+                    });
+        
+                    /* Responsive NavBar */
+        
+                    function toggleMenu(){
+                        const toggleMenu = document.querySelector('.toggleMenu');
+                        const nav = document.querySelector('.nav');
+                        toggleMenu.classList.toggle('active')
+                        nav.classList.toggle('active')
+                    }
+        
+                    /* Scrolling Animation Effects */
+                    window.addEventListener('scroll',function(){
+                        var anime = document.querySelectorAll('.animeX');
+        
+                        for(var s = 0; s < anime.length; s++){
+                            var windowheight = window.innerHeight;
+                            var animetop = anime[s].getBoundingClientRect().top;
+                            var animepoint = 150;
+        
+                            if(animetop < windowheight - animepoint){
+                                anime[s].classList.add('active');
+                            }
+                            else{
+                                anime[s].classList.remove('active');
+                            }
+                        }
+                    })
+        
+        
+        
+        
+        
+                    /* Filterable Cards */
+        
+                    let list = document.querySelectorAll('.list');
+                    let card = document.querySelectorAll('.card'); 
+        
+                    for(let i = 0; i<list.length; i++){
+                        list[i].addEventListener('click',function(){
+                            for(let j=0; j<list.length; j++){
+                                list[j].classList.remove('active');
+                            }
+                            this.classList.add('active');
+        
+                            let dataFilter = this.getAttribute('data-filter');
+        
+                            for( let k=0; k<card.length; k++)
+                            {
+                                card[k].classList.remove('active');
+                                card[k].classList.add('hide');
+        
+                                if(card[k].getAttribute('data-item') == dataFilter || dataFilter == 'all'){
+                                    card[k].classList.remove('hide');
+                                    card[k].classList.add('active');
+                                }
+                            }
+                        })
+                    }
+                </script>
+            </body>
+        </html>
