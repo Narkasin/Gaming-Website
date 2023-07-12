@@ -1,7 +1,7 @@
 
 # Company website
 
-This is my (Thomas Holloway) project towards a company based website.
+This is my (Narkcast) project towards a company based website.
 
 It is written in HTML, though can be made to PHP as the PHP script is already installed and database made.
 
